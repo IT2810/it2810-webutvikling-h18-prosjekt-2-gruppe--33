@@ -5,6 +5,7 @@ import ExhibitionItem from './ExhibitionItem';
 import Menu from './Menu';
 import Header from './Header';
 
+import HamburgerMenu from '../components/HamburgerMenu';
 
 class App extends Component {
   constructor(props){
@@ -52,5 +53,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
