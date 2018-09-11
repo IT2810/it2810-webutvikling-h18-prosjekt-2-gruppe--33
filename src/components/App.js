@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../styles/components/App.css';
-import '../styles/components/hamburgers.css';
 
 import HamburgerMenu from '../components/HamburgerMenu';
+import Exhibition from '../components/Exhibition';
 
 class App extends Component {
+
+
+  /*
+
+      - url has to be some external url
+      - set up another server with 'python -m http.server' inside the assets folder
+
+  */ 
+  
+  loadDoc(url, id) {
+    fetch(url)
+      .then(function(response) {
+        // reutrn
+        return response.text();   
+      }).then(function(payload) {
+        document.getElementById(id).innerHTML = payload;
+      })
+  }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-          
+          <h1> Exhibition </h1>
           <HamburgerMenu/>
 
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>This is just a test</p>
+
+        <Exhibition/>
 
       </div>
     );
