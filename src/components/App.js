@@ -13,9 +13,7 @@ class App extends Component {
     super(props);
     this.state ={
       showMenu: false,
-      text: "text.txt",
-      music: ['text1', 'text2','text3','text4'],
-      pictures: ['svg_file_1']
+      text: ''
     }
   }
 
@@ -31,6 +29,39 @@ class App extends Component {
     this.setState(() =>({
       showMenu: this.state.showMenu ? false : true
     }))
+  }
+
+  handleTextFetch = () => {
+    /*let m = undefined
+    fetch('http://0.0.0.0:8000/txt/H1.txt').then(function(response) {
+      return response.text();
+    }).then(function(myText) {
+    }).then(function(myText){
+      this.setState({text: myText});
+    });
+    */
+   fetch('http://0.0.0.0:8000/txt/H1.txt').then(function(response){
+     return response.text();
+   }).then(myText => this.setState({ text: myText }));
+
+  }
+  
+
+
+
+  
+
+  handleMusicFetch = () => {
+
+  
+  }
+
+  handleSvgFetch = () => {
+
+    fetch("http://0.0.0.0:8000/img/Little_miss_independent.svg")
+  .then(response => response.text())
+  .then(svg => document.getElementById('ImageContainer').insertAdjacentHTML("afterBegin", svg));
+
   }
 
 
@@ -59,7 +90,7 @@ class App extends Component {
   render() {
     let menu = null;
     if(this.state.showMenu){
-      menu = <Menu />
+      menu = <Menu handleTextFetch={this.handleTextFetch}/>
     }
 
     return (
@@ -67,7 +98,7 @@ class App extends Component {
         <Header handleMenu={this.handleMenu} />
         {menu}
         <ExhibitionItem text={this.state.text}/>
-        <NavBar />
+        <NavBar handleSvgFetch={this.handleSvgFetch}/>
       </div>
     );
   }
