@@ -5,12 +5,6 @@ import ExhibitionItem from './ExhibitionItem';
 import Menu from './Menu';
 import Header from './Header';
 
-import HamburgerMenu from '../components/HamburgerMenu';
-<<<<<<< HEAD
-import { stringify } from 'postcss';
-=======
-import Exhibition from '../components/Exhibition';
->>>>>>> acddaf223fd6f05e4cf1eb16b6f3b1e1ddb4d5a7
 
 class App extends Component {
   constructor(props){
@@ -18,14 +12,17 @@ class App extends Component {
     this.state ={
       showMenu: false,
       text: ['TAB 1 TEXT', 'TAB 2 TEXT','TAB 3 TEXT', 'TAB 4 TEXT'],
+      playTab: [true,false,false,false],
       activeTab: 0,
       image1: '',
       image2: '',
       image3: '',
       image4: '',
-      image: 'number'
+      image: 'number',
+      musica: ['wav/lounge/lounge1', 'wav/lounge/lounge2', 'wav/lounge/lounge3', 'wav/lounge/lounge4']
     }
   }
+
 
   handleMenu = () => {
     this.setState(() =>({
@@ -35,8 +32,8 @@ class App extends Component {
 
 
 
-  handleTextFetch = (textFolderName) => { //NB, imgjør til json
-    fetch('http://0.0.0.0:8000/txt/exampel/H1.json').then(function(response){
+  handleTextFetch = (poemName) => {
+    fetch('http://0.0.0.0:8000/json/' + poemName + '.json').then(function(response){
      return response.json(); 
    }).then(myText => this.setState({ text: myText}));
   }
@@ -44,27 +41,41 @@ class App extends Component {
 
   handleTabs = (tabNumber) => {
     this.setState({activeTab: tabNumber});
+    if(tabNumber == 0){
+      this.setState({playTab: [true,false,false,false]})
+    }
+    if(tabNumber == 1){
+      this.setState({playTab: [false,true,false,false]})
+    }
+    if(tabNumber == 2){
+      this.setState({playTab: [false,false,true,false]})
+    }
+    if(tabNumber == 3){
+      this.setState({playTab: [false,false,false,true]})
+    }
   }
 
-  handleSvgFetch = () => {
+  handleSvgFetch = (folder,imgName) => {
 
-  fetch("http://0.0.0.0:8000/img/miss1.svg")
+  fetch("http://0.0.0.0:8000/svg/" + folder + "/" + imgName + "1.svg")
   .then(response => response.text())
   .then(svg => this.setState({image1: svg}));
 
-  fetch("http://0.0.0.0:8000/img/miss2.svg")
+  fetch("http://0.0.0.0:8000/svg/" + folder + "/" + imgName + "2.svg")
   .then(response => response.text())
   .then(svg => this.setState({image2: svg}));
 
-  fetch("http://0.0.0.0:8000/img/miss3.svg")
+  fetch("http://0.0.0.0:8000/svg/" + folder + "/" + imgName + "3.svg")
   .then(response => response.text())
   .then(svg => this.setState({image3: svg}));
 
-  fetch("http://0.0.0.0:8000/img/miss4.svg")
+  fetch("http://0.0.0.0:8000/svg/" + folder + "/" + imgName + "4.svg")
   .then(response => response.text())
   .then(svg => this.setState({image4: svg}));
+  }
 
-
+  setMusicPaths = (musicArray) => {
+    this.setState({musica: musicArray});
   }
 
 
@@ -75,36 +86,27 @@ class App extends Component {
 
   */ 
   
-  loadDoc(url, id) {
-    fetch(url)
-      .then(function(response) {
-        // reutrn
-        return response.text();   
-      }).then(function(payload) {
-        document.getElementById(id).innerHTML = payload;
-      })
-  }
 
   render() {
     let menu = null;
 
     if(this.state.showMenu){
-      menu = <Menu handleSvgFetch={this.handleSvgFetch} handleTextFetch={this.handleTextFetch}/>
+      menu = <Menu setMusicPaths={this.setMusicPaths} handleSvgFetch={this.handleSvgFetch} handleTextFetch={this.handleTextFetch}/>
     }
     
     let item = null;
     if(this.state.image.length > 1){
       if(this.state.activeTab == 0){
-          item = <ExhibitionItem im = {this.state.image1} text={this.state.text[this.state.activeTab]} />
+          item = <ExhibitionItem playTab={this.state.playTab} musica={this.state.musica} im = {this.state.image1} text={this.state.text[this.state.activeTab]} />
       }
       if(this.state.activeTab == 1){
-        item = <ExhibitionItem im = {this.state.image2} text={this.state.text[this.state.activeTab]} />
+        item = <ExhibitionItem playTab={this.state.playTab} musica={this.state.musica}  im = {this.state.image2} text={this.state.text[this.state.activeTab]} />
       }
       if(this.state.activeTab == 2){
-        item = <ExhibitionItem im = {this.state.image3} text={this.state.text[this.state.activeTab]} />
+        item = <ExhibitionItem playTab={this.state.playTab} musica={this.state.musica}  im = {this.state.image3} text={this.state.text[this.state.activeTab]} />
       }
       if(this.state.activeTab == 3){
-        item = <ExhibitionItem im = {this.state.image4} text={this.state.text[this.state.activeTab]} />
+        item = <ExhibitionItem playTab={this.state.playTab} musica={this.state.musica}  im = {this.state.image4} text={this.state.text[this.state.activeTab]} />
       }
     }
 
