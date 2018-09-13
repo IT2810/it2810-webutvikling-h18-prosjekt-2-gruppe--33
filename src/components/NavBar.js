@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import '../styles/components/NavBar.css';
 
 
-const NavBar = (props) => (
-    <div>
-        <button onClick={props.handleCloseMenu}>Tab 1</button>
-        <button onClick={props.handleSvgFetch}>Tab 2</button>
-        <button>Tab 3</button>
-        <button>Tab 4</button>
-    </div>
-)
+export default class NavBar extends Component{
+    state = {
+        something: undefined
+    }
 
+    tabClick= (e) => {
+        const tab = parseInt(e.target.value);
+        this.props.handleTabs(tab);
+    }
 
-export default NavBar;
+    render(){
+        return(
+            <div>
+                <button className="button" onClick={this.tabClick} value='0'>Tab 1</button>
+                <button className="button" onClick={this.tabClick} value='1'>Tab 2</button>
+                <button className="button" onClick={this.tabClick} value='2'>Tab 3</button>
+                <button className="button" onClick={this.tabClick} value='3'>Tab 4</button>
+            </div>
+        )
+    }
+}

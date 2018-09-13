@@ -3,6 +3,6 @@
 .App{
     text-align: center;
     display:grid;
-    grid-template-rows: 20% 60% 20%;
-    
+    grid-template-rows: 100px, 500px, 100px;
+
 }

@@ -6,7 +6,7 @@ import '../styles/components/Header.css';
 const Header = (props) => (
     <div className="App-header">
         <h1>Exhibition</h1>
-        <button onClick={props.handleMenu}>Open Menu</button>
+        <button className="button" onClick={props.handleMenu}>Open Menu</button>
     </div>
 )
 

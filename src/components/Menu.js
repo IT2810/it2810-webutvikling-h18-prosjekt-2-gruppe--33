@@ -12,9 +12,11 @@ export default class Menu extends React.Component {
         };
     }
 
-    logEvent = (event) => {
-        console.log(event.target.value)
-        this.props.handleTextFetch();
+    handleRadioButtons = (event) => {
+        const eventName = event.target.value;
+        this.props.handleTextFetch(eventName);
+        this.props.handleSvgFetch();
+        
 
     }
 
@@ -57,11 +59,11 @@ export default class Menu extends React.Component {
                         <label htmlFor="louie">Art</label>
                         </div>
                     </div>
-                    <div className="TextMenu">
+                    <div className="TextMenu" onChange={this.handleRadioButtons}>
                     <h3 className="MenuHeader">Text</h3>
                         <div>
-                        <input type="radio" id="huey" name="text" />
-                        <label htmlFor="huey">Love</label>
+                        <input type="radio" id="huey" name="text" value="exampel"/>
+                        <label htmlFor="huey">Exampel</label>
                         </div>
 
                         <div>

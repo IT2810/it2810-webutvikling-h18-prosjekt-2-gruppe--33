@@ -1,17 +1,25 @@
 import React from 'react';
-import { getPortPromise } from 'portfinder';
+import $ from 'jquery';
 
 
-const ExhibitionItem = (props) => (
-    <div>
+export default class ExhibitionItem extends React.Component{
+
+    state = {
+        random: undefined
+    }
+    render(){
+        return(
+            <div>
         <h1>ExhibitionItem</h1>
         <p>This is where the picture will be</p>
         <div id="ImageContainer">
         </div>
-        <p>{props.text}</p>
+        <p>{this.props.text}</p>
+        <div id="myImage" dangerouslySetInnerHTML={{__html: this.props.im}}>
+        </div>
         <p>MUSIC PLAYER</p>
     </div>
 
-)
-
-export default ExhibitionItem;
+        )
+    }
+}
