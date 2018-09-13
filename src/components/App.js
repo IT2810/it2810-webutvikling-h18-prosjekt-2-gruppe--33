@@ -6,7 +6,11 @@ import Menu from './Menu';
 import Header from './Header';
 
 import HamburgerMenu from '../components/HamburgerMenu';
+<<<<<<< HEAD
 import { stringify } from 'postcss';
+=======
+import Exhibition from '../components/Exhibition';
+>>>>>>> acddaf223fd6f05e4cf1eb16b6f3b1e1ddb4d5a7
 
 class App extends Component {
   constructor(props){
@@ -61,6 +65,24 @@ class App extends Component {
   .then(svg => this.setState({image4: svg}));
 
 
+  }
+
+
+  /*
+
+      - url has to be some external url
+      - set up another server with 'python -m http.server' inside the assets folder
+
+  */ 
+  
+  loadDoc(url, id) {
+    fetch(url)
+      .then(function(response) {
+        // reutrn
+        return response.text();   
+      }).then(function(payload) {
+        document.getElementById(id).innerHTML = payload;
+      })
   }
 
   render() {
