@@ -58,7 +58,6 @@ export default class Exhibition extends React.Component {
         }
 
         if(prevState.images[this.state.activeTab] ==''){
-                console.log("Fetching")
                 fetch(this.props.imagePaths[this.state.activeTab])
                 .then(response => response.text())
                 .then(svg => {
