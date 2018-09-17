@@ -1,6 +1,26 @@
-.button {
-    border: 1px solid black;
-    padding: 5px;
-    margin: 10px;
-    background: lightblue;
+.navBarButton {
+    border: 1px solid #edf0ed;
+    padding: 20px;
+    background: #ccc;
+    width: 5  0px;
+    border-radius: 50%;
+    margin: 2% 3% 30px 3%;
+}
+#navBarContainer{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  background: #f2f2f2;
+}
+.navBarButton:hover{
+background: #ffffff;
+}
+
+.navBarButtonSelected{
+  background: #ff8787;
+  border: 1px solid #edf0ed;
+  padding: 20px;
+  border-radius: 50%;
+  margin: 2% 3% 30px 3%;
 }

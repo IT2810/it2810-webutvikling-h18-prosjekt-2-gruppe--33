@@ -4,21 +4,25 @@ import '../styles/components/NavBar.css';
 
 
 export default class NavBar extends Component {
+  state = {
+    activeButton: [false, false, false, false]
+  }
+  tabClick= (e) => {
+      const tab = parseInt(e.target.value);
+      console.log(tab);
+      this.props.handleActiveTab(tab);
+      this.state.activeButton = [false, false, false, false];
+      this.state.activeButton[tab] = !this.state.activeButton[tab];
+  }
 
-    tabClick= (e) => {
-        const tab = parseInt(e.target.value);
-        console.log(tab);
-        this.props.handleActiveTab(tab);
-    }
-
-    render(){
-        return(
-            <div>
-                <button className="button" onClick={this.tabClick} value='0'>Tab 1</button>
-                <button className="button" onClick={this.tabClick} value='1'>Tab 2</button>
-                <button className="button" onClick={this.tabClick} value='2'>Tab 3</button>
-                <button className="button" onClick={this.tabClick} value='3'>Tab 4</button>
-            </div>
-        )
-    }
+  render(){
+      return(
+          <div id="navBarContainer">
+              <button className={this.state.activeButton[0] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='0'>&nbsp;I&nbsp;</button>
+              <button className={this.state.activeButton[1] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='1'>II </button>
+              <button className={this.state.activeButton[2] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='2'>III</button>
+              <button className={this.state.activeButton[3] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='3'>IV</button>
+          </div>
+      )
+  }
 }
