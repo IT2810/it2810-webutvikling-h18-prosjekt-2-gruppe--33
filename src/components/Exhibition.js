@@ -72,6 +72,7 @@ export default class Exhibition extends React.Component {
 
 
       render() {
+          let activeTab = this.state.activeTab;
           return(
               <div>
               <ExhibitionItem image={this.state.images[this.state.activeTab]} text={this.state.text[this.state.activeTab]} music={this.state.musicPaths[this.state.activeTab]}/>

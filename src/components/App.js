@@ -12,16 +12,8 @@ class App extends Component {
     super(props);
     this.state = {
       showMenu: false,
-      text: ['TAB 1 TEXT', 'TAB 2 TEXT','TAB 3 TEXT', 'TAB 4 TEXT'],
       textPath: 'http://0.0.0.0:8000/json/haiku.json',
       imagePaths: ['http://0.0.0.0:8000/svg/architecture/architecture1.svg','http://0.0.0.0:8000/svg/architecture/architecture2.svg','http://0.0.0.0:8000/svg/architecture/architecture3.svg','http://0.0.0.0:8000/svg/architecture/architecture4.svg'],
-      playTab: [true,false,false,false],
-      activeTab: 0,
-      image1: '',
-      image2: '',
-      image3: '',
-      image4: '',
-      image: 'number',
       musicPaths: ['wav/lounge/lounge1', 'wav/lounge/lounge2', 'wav/lounge/lounge3', 'wav/lounge/lounge4']
     }
   }
