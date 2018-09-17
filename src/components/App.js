@@ -20,7 +20,6 @@ class App extends Component {
 
 
   handleMenu = () => {
-    console.log("menu handled");
     this.setState(() =>({
       showMenu: this.state.showMenu ? false : true
     }))
@@ -28,13 +27,11 @@ class App extends Component {
 
   setTextPath = (poemName) => {
     let textPath = 'http://0.0.0.0:8000/json/' + poemName + '.json';
-    console.log(textPath);
     this.setState({textPath});
     
   }
 
   setMusicPaths = (musicArray) => {
-    console.log(musicArray);
     this.setState({musicPaths: musicArray});
   }
 
@@ -44,7 +41,6 @@ class App extends Component {
       let path = "http://0.0.0.0:8000/svg/" + folder + "/" + imgName + i + ".svg";
       imagePaths.push(path);
     }
-    console.log(imagePaths);
     this.setState({imagePaths});
 
   }

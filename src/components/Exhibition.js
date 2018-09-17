@@ -6,8 +6,6 @@ import ExhibitionItem from './ExhibitionItem';
 
 export default class Exhibition extends React.Component {
 
-    
-
     constructor(props){
         super(props);
         this.state = {
@@ -53,11 +51,19 @@ export default class Exhibition extends React.Component {
         }
 
         if(prevProps.textPath !== this.props.textPath){
-            let text = this.props.textPath;
+            let text = initialState;
             this.setState({text});
         }
 
-        if(prevState.images[this.state.activeTab] ==''){
+        if(prevState.text[this.state.activeTab] === '') {
+          console.log("Fetching text");
+          fetch(this.props.textPath).then(function(response){
+              return response.json();
+            }).then(myText => this.setState({ text: myText}));
+        }
+
+        if(prevState.images[this.state.activeTab] === ''){
+                console.log("Fetching image")
                 fetch(this.props.imagePaths[this.state.activeTab])
                 .then(response => response.text())
                 .then(svg => {

@@ -34,21 +34,18 @@ export default class Menu extends React.Component {
         if(eventName === 'ARCHITECTURE'){
             const folder = 'architecture';
             const imgName = 'architecture';
-           // this.props.handleSvgFetch(folder,imgName);
            this.props.setImagePaths(folder,imgName);
         }
 
         if(eventName === 'FLOWERS'){
             const folder = 'flowers';
             const imgName = 'flower';
-            //this.props.handleSvgFetch(folder,imgName);
             this.props.setImagePaths(folder,imgName);
         }
 
         if(eventName === 'PET'){
             const folder = 'pets';
             const imgName = 'pet';
-            //this.props.handleSvgFetch(folder,imgName);
             this.props.setImagePaths(folder,imgName);
         }
     }
