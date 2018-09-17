@@ -3,14 +3,12 @@ import React, { Component } from 'react';
 import '../styles/components/NavBar.css';
 
 
-export default class NavBar extends Component{
-    state = {
-        something: undefined
-    }
+export default class NavBar extends Component {
 
     tabClick= (e) => {
         const tab = parseInt(e.target.value);
-        this.props.handleTabs(tab);
+        console.log(tab);
+        this.props.handleActiveTab(tab);
     }
 
     render(){

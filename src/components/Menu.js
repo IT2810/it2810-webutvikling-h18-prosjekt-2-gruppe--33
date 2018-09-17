@@ -5,13 +5,6 @@ import '../styles/components/Menu.css';
 
 export default class Menu extends React.Component {
 
-    constructor(props){
-        super(props)
-        this.state = {
-            error: true,
-        };
-    }
-
     handleRadioMusicEvent = (event) => {
         let musicType = event.target.value;
         if(musicType == 'RHYTHM'){
@@ -31,7 +24,7 @@ export default class Menu extends React.Component {
 
     handleRadioTextEvent = (event) =>{
         const eventName = event.target.value;
-        this.props.handleTextFetch(eventName);
+        this.props.setTextPath(eventName);
     }
 
     handleRadioImageEvent = (event) => {
@@ -41,19 +34,22 @@ export default class Menu extends React.Component {
         if(eventName == 'ARCHITECTURE'){
             const folder = 'architecture';
             const imgName = 'architecture';
-            this.props.handleSvgFetch(folder,imgName);
+           // this.props.handleSvgFetch(folder,imgName);
+           this.props.setImagePaths(folder,imgName);
         }
 
         if(eventName == 'FLOWERS'){
             const folder = 'flowers';
             const imgName = 'flower';
-            this.props.handleSvgFetch(folder,imgName);
+            //this.props.handleSvgFetch(folder,imgName);
+            this.props.setImagePaths(folder,imgName);
         }
 
         if(eventName == 'PET'){
             const folder = 'pets';
             const imgName = 'pet';
-            this.props.handleSvgFetch(folder,imgName);
+            //this.props.handleSvgFetch(folder,imgName);
+            this.props.setImagePaths(folder,imgName);
         }
     }
 
