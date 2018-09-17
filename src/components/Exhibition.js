@@ -42,23 +42,22 @@ export default class Exhibition extends React.Component {
 
     componentDidUpdate(prevProps,prevState){
         let initialState = ['','','','']
-        if(prevProps.imagePaths != this.props.imagePaths){
+        if(prevProps.imagePaths !== this.props.imagePaths){
             let images = initialState;
             this.setState({images});
         }
 
-        if(prevProps.musicPaths != this.props.musicPaths){
+        if(prevProps.musicPaths !== this.props.musicPaths){
             let musicPaths = this.props.musicPaths.map((path) => 'http://0.0.0.0:8000/' + path + ".mp3");
             this.setState({musicPaths});
         }
 
-        if(prevProps.textPath != this.props.textPath){
+        if(prevProps.textPath !== this.props.textPath){
             let text = this.props.textPath;
             this.setState({text});
         }
 
         if(prevState.images[this.state.activeTab] ==''){
-                console.log("Fetching")
                 fetch(this.props.imagePaths[this.state.activeTab])
                 .then(response => response.text())
                 .then(svg => {

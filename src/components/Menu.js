@@ -7,15 +7,15 @@ export default class Menu extends React.Component {
 
     handleRadioMusicEvent = (event) => {
         let musicType = event.target.value;
-        if(musicType == 'RHYTHM'){
+        if(musicType === 'RHYTHM'){
             let musicArray = [ 'wav/rhythm/rhythm1', 'wav/rhythm/rhythm2', 'wav/rhythm/rhythm3', 'wav/rhythm/rhythm4' ]
             this.props.setMusicPaths(musicArray);
         }
-        if(musicType == 'LOUNGE'){
+        if(musicType === 'LOUNGE'){
             let musicArray = ['wav/lounge/lounge1', 'wav/lounge/lounge2', 'wav/lounge/lounge3', 'wav/lounge/lounge4']
             this.props.setMusicPaths(musicArray);
         }
-        if(musicType == 'ORCHESTRAL'){
+        if(musicType === 'ORCHESTRAL'){
             let musicArray = [ 'wav/orchestral/orchestral1', 'wav/orchestral/orchestral2', 'wav/orchestral/orchestral3', 'wav/orchestral/orchestral4' ]
             this.props.setMusicPaths(musicArray);
         }
@@ -31,21 +31,21 @@ export default class Menu extends React.Component {
 
         const eventName = event.target.value;
 
-        if(eventName == 'ARCHITECTURE'){
+        if(eventName === 'ARCHITECTURE'){
             const folder = 'architecture';
             const imgName = 'architecture';
            // this.props.handleSvgFetch(folder,imgName);
            this.props.setImagePaths(folder,imgName);
         }
 
-        if(eventName == 'FLOWERS'){
+        if(eventName === 'FLOWERS'){
             const folder = 'flowers';
             const imgName = 'flower';
             //this.props.handleSvgFetch(folder,imgName);
             this.props.setImagePaths(folder,imgName);
         }
 
-        if(eventName == 'PET'){
+        if(eventName === 'PET'){
             const folder = 'pets';
             const imgName = 'pet';
             //this.props.handleSvgFetch(folder,imgName);
