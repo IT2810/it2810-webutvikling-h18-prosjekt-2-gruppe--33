@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../styles/components/ExhibitionItem.css'
 
 export default class ExhibitionItem extends React.Component{
 
@@ -12,14 +12,14 @@ export default class ExhibitionItem extends React.Component{
     
     render(){
         return(
-            <div>
-            <p>{this.props.text}</p>
-            <div id="myImage" dangerouslySetInnerHTML={{__html: this.props.image}}></div>
-            <button className="button" onClick={this.play}>Play Music</button>
-            <audio ref={(playAudio) => { this.playAudio = playAudio; }}>
-			<source src={this.props.music} type="audio/mpeg" >
-			</source>
-            </audio>
+            <div className="ExhibitionItem">
+                <div id="myImage" dangerouslySetInnerHTML={{__html: this.props.image}}></div>
+                <p>{this.props.text}</p>
+                <button className="button" onClick={this.play}></button>
+                <audio ref={(playAudio) => { this.playAudio = playAudio; }}>
+        			<source src={this.props.music} type="audio/mpeg" >
+        			</source>
+                </audio>
             </div>
 
         )
