@@ -9,10 +9,10 @@ export default class NavBar extends Component {
   }
   tabClick= (e) => {
       const tab = parseInt(e.target.value);
-      console.log(tab);
       this.props.handleActiveTab(tab);
-      this.state.activeButton = [false, false, false, false];
-      this.state.activeButton[tab] = !this.state.activeButton[tab];
+      let activeButton = [false, false, false, false];
+      activeButton[tab] = !activeButton[tab];
+      this.setState({activeButton});
   }
 
   render(){
