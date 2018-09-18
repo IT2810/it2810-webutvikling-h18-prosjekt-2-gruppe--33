@@ -50,7 +50,7 @@ class App extends Component {
     
     let menu = null
     if(this.state.showMenu){
-      menu =  <Menu setImagePaths={this.setImagePaths} setMusicPaths={this.setMusicPaths}  setTextPath={this.setTextPath}/>
+      menu =  <Menu handleMenu={this.handleMenu} setImagePaths={this.setImagePaths} setMusicPaths={this.setMusicPaths}  setTextPath={this.setTextPath}/>
     }
 
     return (
