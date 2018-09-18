@@ -5,7 +5,7 @@ import '../styles/components/NavBar.css';
 
 export default class NavBar extends Component {
   state = {
-    activeButton: [false, false, false, false]
+    activeButton: [true, false, false, false]
   }
   tabClick= (e) => {
       const tab = parseInt(e.target.value);

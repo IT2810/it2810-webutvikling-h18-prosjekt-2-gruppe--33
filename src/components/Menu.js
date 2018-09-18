@@ -19,7 +19,7 @@ export default class Menu extends React.Component {
             let musicArray = [ 'wav/orchestral/orchestral1', 'wav/orchestral/orchestral2', 'wav/orchestral/orchestral3', 'wav/orchestral/orchestral4' ]
             this.props.setMusicPaths(musicArray);
         }
-    
+
     }
 
     handleRadioTextEvent = (event) =>{
@@ -55,6 +55,7 @@ export default class Menu extends React.Component {
             <div className="Menu">
                 <div className="Menu-main">
                 <button className="close-menu-button" onClick={this.props.handleMenu}>X</button>
+                  <div className="itemsContainer">
                     <div className="MusicMenu" onChange={this.handleRadioMusicEvent}>
                         <h3 className="MenuHeader">Music</h3>
                         <div>
@@ -71,7 +72,7 @@ export default class Menu extends React.Component {
                         <input className="radio-input" type="radio" id="louie" name="music" value="RHYTHM" />
                         <label htmlFor="louie">Rhythm</label>
                         </div>
-                    
+
                     </div>
                     <div className="ImageMenu" onChange={this.handleRadioImageEvent}>
                     <h3 className="MenuHeader">Image</h3>
@@ -106,14 +107,14 @@ export default class Menu extends React.Component {
                         <input className="radio-input" type="radio" id="louie" name="text" value="love_poems" />
                         <label htmlFor="louie">Love poems</label>
                         </div>
-                    
+                      </div>
                     </div>
                 </div>
             </div>
         )
     }
 
-    
+
 
 
 
