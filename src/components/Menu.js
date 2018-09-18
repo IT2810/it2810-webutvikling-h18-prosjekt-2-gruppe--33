@@ -54,20 +54,21 @@ export default class Menu extends React.Component {
         return(
             <div className="Menu">
                 <div className="Menu-main">
+                <button className="close-menu-button">X</button>
                     <div className="MusicMenu" onChange={this.handleRadioMusicEvent}>
                         <h3 className="MenuHeader">Music</h3>
                         <div>
-                        <input type="radio" id="huey" name="music" value="LOUNGE" />
+                        <input className="radio-input" type="radio" id="huey" name="music" value="LOUNGE" />
                         <label htmlFor="huey">Lounge</label>
                         </div>
 
                         <div>
-                        <input type="radio" id="dewey" name="music" value="ORCHESTRAL" />
+                        <input className="radio-input" type="radio" id="dewey" name="music" value="ORCHESTRAL" />
                         <label htmlFor="dewey">Orchestral</label>
                         </div>
 
                         <div>
-                        <input type="radio" id="louie" name="music" value="RHYTHM" />
+                        <input className="radio-input" type="radio" id="louie" name="music" value="RHYTHM" />
                         <label htmlFor="louie">Rhythm</label>
                         </div>
                     
@@ -75,40 +76,38 @@ export default class Menu extends React.Component {
                     <div className="ImageMenu" onChange={this.handleRadioImageEvent}>
                     <h3 className="MenuHeader">Image</h3>
                         <div>
-                        <input type="radio" id="huey" name="image" value="ARCHITECTURE"/>
+                        <input className="radio-input" type="radio" id="huey" name="image" value="ARCHITECTURE"/>
                         <label htmlFor="huey">Architecture</label>
                         </div>
 
                         <div>
-                        <input type="radio" id="dewey" name="image" value="FLOWERS" />
+                        <input className="radio-input" type="radio" id="dewey" name="image" value="FLOWERS" />
                         <label htmlFor="dewey">Flowers</label>
                         </div>
 
                         <div>
-                        <input type="radio" id="louie" name="image" value="PET" />
+                        <input className="radio-input" type="radio" id="louie" name="image" value="PET" />
                         <label htmlFor="louie">Pets</label>
                         </div>
                     </div>
                     <div className="TextMenu" onChange={this.handleRadioTextEvent}>
                     <h3 className="MenuHeader">Text</h3>
                         <div>
-                        <input type="radio" id="huey" name="text" value="haiku"/>
+                        <input className="radio-input" type="radio" id="huey" name="text" value="haiku"/>
                         <label htmlFor="huey">Haiku</label>
                         </div>
 
                         <div>
-                        <input type="radio" id="dewey" name="text" value="limerick"/>
+                        <input className="radio-input" type="radio" id="dewey" name="text" value="limerick"/>
                         <label htmlFor="dewey">Limerick</label>
                         </div>
 
                         <div>
-                        <input type="radio" id="louie" name="text" value="love_poems" />
+                        <input className="radio-input" type="radio" id="louie" name="text" value="love_poems" />
                         <label htmlFor="louie">Love poems</label>
                         </div>
                     
                     </div>
-
-                    <button className="GenerateButton">Generate Exhibition</button>
                 </div>
             </div>
         )
