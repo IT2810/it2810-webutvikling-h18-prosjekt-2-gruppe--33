@@ -54,7 +54,7 @@ export default class Menu extends React.Component {
         return(
             <div className="Menu">
                 <div className="Menu-main">
-                <button className="close-menu-button">X</button>
+                <button className="close-menu-button" onClick={this.props.handleMenu}>X</button>
                     <div className="MusicMenu" onChange={this.handleRadioMusicEvent}>
                         <h3 className="MenuHeader">Music</h3>
                         <div>
