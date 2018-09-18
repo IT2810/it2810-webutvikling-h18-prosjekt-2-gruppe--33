@@ -1,6 +1,7 @@
 .App-header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .header-title{
@@ -9,6 +10,19 @@
 
 
 .header-button{
+  width: 75px;
+  border: 1px solid black;
+  height: 50px;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.header-button:hover{
+  background-color: #ccc;
+
+}
 
 
+#invisibleContent{
+  width: 75px;
 }
