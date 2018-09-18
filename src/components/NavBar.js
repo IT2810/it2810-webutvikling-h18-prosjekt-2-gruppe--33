@@ -14,14 +14,14 @@ export default class NavBar extends Component {
       this.state.activeButton = [false, false, false, false];
       this.state.activeButton[tab] = !this.state.activeButton[tab];
   }
-  
+
   render(){
-      return( 
+      return(
           <div id="navBarContainer">
-              <button className={this.state.activeButton[0] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='0'>&nbsp;I&nbsp;</button>
-              <button className={this.state.activeButton[1] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='1'>II </button>
-              <button className={this.state.activeButton[2] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='2'>III</button>
-              <button className={this.state.activeButton[3] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='3'>IV</button>
+              <button className={this.state.activeButton[0] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='0'>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+              <button className={this.state.activeButton[1] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='1'>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+              <button className={this.state.activeButton[2] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='2'>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+              <button className={this.state.activeButton[3] ? 'navBarButtonSelected' : 'navBarButton'} onClick={this.tabClick} value='3'>&nbsp;&nbsp;&nbsp;&nbsp;</button>
           </div>
       )
   }
