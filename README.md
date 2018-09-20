@@ -3,7 +3,7 @@
 
 ## Innholdsfortegnelse
 
-- [Design](#Design)
+- [Innhold og funksjonalitet](#Innhold og funksjonalitet)
 - [Komponentstruktur](#Komponentstruktur)
 - [AJAX](#AJAX)
 - [React](#React)
