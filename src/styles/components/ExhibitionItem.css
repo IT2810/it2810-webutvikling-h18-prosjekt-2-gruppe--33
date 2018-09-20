@@ -1,14 +1,11 @@
 .ExhibitionItem {
 	display: flex;
-	flex-direction: column;
 	margin: auto;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 5px;
 	width: 85%;
 	height: 80%;
-
-
 }
 
 .ExhibitionItem > * {
@@ -16,15 +13,89 @@
 	margin-bottom: 20px;
 }
 
-.ExhibitionItem > p {
-	width: 75%;
+.ExhibitionItem p {
 	margin: 0 auto;
 	white-space: pre-wrap;
 }
+/*Desktop*/
+@media only screen
+	and (min-width: 1025px){
+		.ExhibitionItem{
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+		.flexItem{
+			padding: 10% 1%;
+		}
+	}
+	/*Desktop end */
+/*Phone*/
+@media only screen
+	and (max-width: 668px)
+	and (orientation: landscape)
+	{
+		.ExhibitionItem{
+			flex-direction: row;
+			align-items: center;
+		}
+		.flexItem{
+			margin: 0 auto;
+			padding: 10px;
+		}
+}
+@media only screen
+and (max-width: 667px)
+	and (orientation: portrait)
+	{
+		.ExhibitionItem{
+			flex-direction: column;
+			max-height: 90%;
+		}
+		.flexItem{
+			margin: 0 auto;
+			padding: 20px 10px;
+		}
+}
+/*phone end*/
+/*Tablet*/
+/* Portrait */
+@media only screen
+  and (min-width: 668px)
+  and (max-width: 1024px)
+  and (orientation: portrait){
+		.ExhibitionItem{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 
+		}
+		.flexItem{
+			padding: 8% 2%;
+		}
+}
+
+/* Landscape */
+@media only screen
+  and (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape){
+		.ExhibitionItem{
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
+			padding: 10% 1%;
+		}
+}
+
+/*Tablet ends*/
 svg {
 	max-width: 200px;
 	max-height: 200px;
+}
+
+svg:not(button){
+	width: 80%;
 }
 
 button {

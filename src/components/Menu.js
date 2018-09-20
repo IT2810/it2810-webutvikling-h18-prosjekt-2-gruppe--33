@@ -56,7 +56,7 @@ export default class Menu extends React.Component {
                 <div className="Menu-main">
                 <button className="close-menu-button" onClick={this.props.handleMenu}>X</button>
                   <div className="itemsContainer">
-                    <div className="MusicMenu" onChange={this.handleRadioMusicEvent}>
+                    <div className="MusicMenu menuItem" onChange={this.handleRadioMusicEvent}>
                         <h3 className="MenuHeader">Music</h3>
                         <div>
                         <input className="radio-input" type="radio" id="huey" name="music" value="LOUNGE" />
@@ -74,7 +74,7 @@ export default class Menu extends React.Component {
                         </div>
 
                     </div>
-                    <div className="ImageMenu" onChange={this.handleRadioImageEvent}>
+                    <div className="ImageMenu menuItem" onChange={this.handleRadioImageEvent}>
                     <h3 className="MenuHeader">Image</h3>
                         <div>
                         <input className="radio-input" type="radio" id="huey" name="image" value="ARCHITECTURE"/>
@@ -91,7 +91,7 @@ export default class Menu extends React.Component {
                         <label htmlFor="louie">Pets</label>
                         </div>
                     </div>
-                    <div className="TextMenu" onChange={this.handleRadioTextEvent}>
+                    <div className="TextMenu menuItem" onChange={this.handleRadioTextEvent}>
                     <h3 className="MenuHeader">Text</h3>
                         <div>
                         <input className="radio-input" type="radio" id="huey" name="text" value="haiku"/>

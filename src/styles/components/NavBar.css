@@ -2,7 +2,6 @@
     border: 1px solid #edf0ed;
     padding: 20px;
     background: #ccc;
-    width: 5  0px;
     border-radius: 50%;
 }
 #navBarContainer{
@@ -15,7 +14,7 @@
   padding: 20px;
 }
 .navBarButton:hover{
-background: #ffffff;
+  background: #ffffff;
 }
 
 .navBarButtonSelected{
@@ -25,3 +24,12 @@ background: #ffffff;
   border-radius: 50%;
 }
 button:focus {outline:0;}
+
+@media only screen
+	and (max-width: 668px)
+	and (orientation: landscape){
+    #navBarContainer{
+      margin: -10px auto 0 auto;
+    }
+
+}
