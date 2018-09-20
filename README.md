@@ -25,7 +25,7 @@ Layouten til siden vår er av minimalistisk art utformet med inspirasjon fra eks
 
 
 ## Komponentstruktur
-Vår komponentstruktur er laget etter et forslag av stud.ass. Her benytter vi <App /> som hovedkomponent, og er overordnet herre i vårt react-hierarki. <App /> lagrer kun kategorivalgene i state, sendt ned fra <Menu />. Disse kategoriene blir sendt ned til <Exhibition />, som har overordnet ansvar for å fetche rett innhold til enhver tid, og logikk for å unngå ekstra fetching hvis en tab allerede har vært besøkt. <Exhibition /> sender ned all data som samsvarer med hvilken tab, og sender dette ned som props. <NavBar /> sender beskjed til <Exhibition /> om hvilken tab som er aktiv. 
+Vår komponentstruktur er laget etter et forslag av stud.ass. Her benytter vi <App /> som hovedkomponent, og er overordnet herre i vårt react-hierarki. <App /> lagrer kun kategorivalgene i state, sendt ned fra <Menu />. Disse kategoriene blir sendt ned til &ltExhibition />, som har overordnet ansvar for å fetche rett innhold til enhver tid, og logikk for å unngå ekstra fetching hvis en tab allerede har vært besøkt. <Exhibition /> sender ned all data som samsvarer med hvilken tab, og sender dette ned som props. <NavBar /> sender beskjed til <Exhibition /> om hvilken tab som er aktiv. 
 
 ##### Class components
 * <App />
