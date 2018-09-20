@@ -5,10 +5,10 @@
 
 - [Design](#Design)
 - [Komponentstruktur](#Komponentstruktur)
-- [AJAX][#AJAX]
-- [React][#React]
-- [Responsivitet][#Responsivitet]
-- [Samarbeid, Git, koding og leveranse][#Samarbeid]
+- [AJAX](#AJAX)
+- [React](#React)
+- [Responsivitet](#Responsivitet)
+- [Samarbeid, Git, koding og leveranse](#Samarbeid)
 
 
 
