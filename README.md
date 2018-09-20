@@ -19,6 +19,8 @@
 
 ## Komponentstruktur
 
+![alt text](https://i.imgur.com/yruHiwo.png)
+
 ## React
 
 ## AJAX
@@ -29,7 +31,6 @@
 
 ## Samarbeid, Git, koding og leveranse
 
-![alt text](https://i.imgur.com/yruHiwo.png)
 
 
 
