@@ -4,12 +4,31 @@
 ## Innholdsfortegnelse
 
 - [Design](#Design)
+- [Komponentstruktur](#Komponentstruktur)
+- [AJAX][#AJAX]
+- [React][#React]
+- [Responsivitet][#Responsivitet]
+- [Samarbeid, Git, koding og leveranse][#Samarbeid]
 
 
 
 
 
 
-## Design
+## Innhold og funksjonalitet
 
-##Komponentstruktur
+## Komponentstruktur
+
+## React
+
+## AJAX
+
+## Responsivitet
+
+## Testing
+
+## Samarbeid, Git, koding og leveranse
+
+
+
+
