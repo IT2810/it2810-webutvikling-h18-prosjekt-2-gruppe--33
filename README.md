@@ -29,6 +29,10 @@
 
 ## Samarbeid, Git, koding og leveranse
 
+![alt text](https://i.imgur.com/yruHiwo.png)
+
+
+
 
 
 
