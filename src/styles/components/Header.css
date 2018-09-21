@@ -1,6 +1,24 @@
-
-
 .App-header{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 85%;
+}
+
+.header-button{
+  width: 75px;
+  border: 1px solid black;
+  height: 50px;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.header-button:hover{
+  background-color: #ccc;
+}
+/*This is used to center the title using flex' space-evenlyt*/
+#invisibleContent{
+  width: 75px;
 }

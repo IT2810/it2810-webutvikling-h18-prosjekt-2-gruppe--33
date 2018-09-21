@@ -1,0 +1,114 @@
+/*Common styling for all device sizes*/
+.ExhibitionItem {
+	display: flex;
+	margin: auto;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	width: 85%;
+	height: 80%;
+}
+
+.ExhibitionItem > * {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.ExhibitionItem p {
+	margin: 0 auto;
+	white-space: pre-wrap;
+}
+svg button {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+button {
+	border: none;
+	background-color: #FFFFFF;
+}
+/*Desktop*/
+@media only screen
+	and (min-width: 1025px){
+		.ExhibitionItem{
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+		.flexItem{
+			padding: 10% 1%;
+		}
+		svg{
+			size: 100%;
+		}
+}
+/*Desktop end */
+/*Tablet*/
+/* Portrait */
+@media only screen
+  and (min-width: 668px)
+  and (max-width: 1024px)
+  and (orientation: portrait){
+		.ExhibitionItem{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.flexItem{
+			padding: 8% 2%;
+		}
+}
+
+/* Landscape */
+@media only screen
+  and (min-width: 668px)
+  and (max-width: 1024px)
+  and (orientation: landscape){
+		.ExhibitionItem{
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
+			padding: 10% 1%;
+		}
+		svg{
+			size: 80%;
+		}
+}
+
+/*Tablet ends*/
+/*Phone*/
+@media only screen
+	and (max-width: 668px)
+	and (orientation: landscape)
+	{
+		.ExhibitionItem{
+			flex-direction: row;
+			align-items: center;
+		}
+		.flexItem{
+			margin: 20px auto;
+			padding: 10px;
+		}
+		#myImage svg{
+			width: 70%;
+			height: 70%;
+		}
+}
+@media only screen
+and (max-width: 667px)
+	and (orientation: portrait)
+	{
+		.ExhibitionItem{
+			flex-direction: column;
+			max-height: 90%;
+		}
+		.flexItem{
+			margin: 0 auto;
+			padding: 30px 10px;
+		}#myImage svg{
+			width: 70%;
+			height: 70%;
+		}
+}
+/*phone end*/

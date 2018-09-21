@@ -2,11 +2,14 @@ import React from 'react';
 import '../styles/components/Header.css';
 
 
-
+//Contains title and menu button
 const Header = (props) => (
     <div className="App-header">
-        <h1>Exhibition</h1>
-        <button onClick={props.handleMenu}>Open Menu</button>
+      <div id="invisibleContent">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div>
+        <h1 className="header-title">Exhibition</h1>
+      </div>
+      <button className="header-button" onClick={props.handleMenu}>Change exhibition</button>
     </div>
 )
 

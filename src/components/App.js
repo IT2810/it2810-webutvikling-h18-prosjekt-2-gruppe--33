@@ -4,70 +4,61 @@ import NavBar from './NavBar';
 import ExhibitionItem from './ExhibitionItem';
 import Menu from './Menu';
 import Header from './Header';
+import Exhibition from './Exhibition';
 
-import HamburgerMenu from '../components/HamburgerMenu';
-import Exhibition from '../components/Exhibition';
-
+//The main component in our app
 class App extends Component {
   constructor(props){
     super(props);
-    this.state ={
+    this.state = {
       showMenu: false,
-      text: "text.txt",
-      music: ['text1', 'text2','text3','text4'],
-      pictures: ['svg_file_1']
+      textPath: 'http://0.0.0.0:8000/json/haiku.json',
+      imagePaths: ['http://0.0.0.0:8000/svg/architecture/architecture1.svg','http://0.0.0.0:8000/svg/architecture/architecture2.svg','http://0.0.0.0:8000/svg/architecture/architecture3.svg','http://0.0.0.0:8000/svg/architecture/architecture4.svg'],
+      musicPaths: ['wav/lounge/lounge1', 'wav/lounge/lounge2', 'wav/lounge/lounge3', 'wav/lounge/lounge4']
     }
   }
 
-  /*
-  
-  TODO: legge inn en generell fetch funksjon som henter en fil, send funksjonen ned til en knapp, onClick={props.fetchFunksjon}
-  ,lagrer innholdet i 
-  state-objektet text, og sender text som props ned til en komponent som kan vise denne teksten.
-
-  */
-
+//Function for opening the menu
   handleMenu = () => {
     this.setState(() =>({
       showMenu: this.state.showMenu ? false : true
     }))
   }
 
+//Functions for setting asset paths
+  setTextPath = (poemName) => {
+    let textPath = 'http://0.0.0.0:8000/json/' + poemName + '.json';
+    this.setState({textPath});
 
-
-
-
-
-
-  /*
-
-      - url has to be some external url
-      - set up another server with 'python -m http.server' inside the assets folder
-
-  */ 
-  
-  loadDoc(url, id) {
-    fetch(url)
-      .then(function(response) {
-        // reutrn
-        return response.text();   
-      }).then(function(payload) {
-        document.getElementById(id).innerHTML = payload;
-      })
   }
 
-  render() {
-    let menu = null;
-    if(this.state.showMenu){
-      menu = <Menu />
-    }
+  setMusicPaths = (musicArray) => {
+    this.setState({musicPaths: musicArray});
+  }
 
+  setImagePaths = (folder,imgName) => {
+    let imagePaths = [];
+    for(let i = 1; i<5; i++){
+      let path = "http://0.0.0.0:8000/svg/" + folder + "/" + imgName + i + ".svg";
+      imagePaths.push(path);
+    }
+    this.setState({imagePaths});
+
+  }
+
+
+  render() {
+
+    let menu = null
+    if(this.state.showMenu){
+      menu =  <Menu handleMenu={this.handleMenu} setImagePaths={this.setImagePaths} setMusicPaths={this.setMusicPaths}  setTextPath={this.setTextPath}/>
+    }
+//Passing paths as props to Exhibition, which performs the actual AJAX
     return (
       <div className="App">
         <Header handleMenu={this.handleMenu} />
         {menu}
-        <ExhibitionItem text={this.state.text}/>
-        <NavBar />
+        <Exhibition imagePaths={this.state.imagePaths} textPath={this.state.textPath} musicPaths={this.state.musicPaths} />
       </div>
     );
   }
