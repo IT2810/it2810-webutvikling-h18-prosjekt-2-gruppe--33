@@ -77,7 +77,7 @@ and (max-width: 667px)
 
 /* Landscape */
 @media only screen
-  and (min-width: 768px)
+  and (min-width: 668px)
   and (max-width: 1024px)
   and (orientation: landscape){
 		.ExhibitionItem{
