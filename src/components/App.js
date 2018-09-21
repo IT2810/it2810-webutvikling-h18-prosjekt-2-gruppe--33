@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       showMenu: false,
       textPath: 'http://it2810-33.idi.ntnu.no/media/json/haiku.json',
-      imagePaths: ['http://it2810-33.idi.ntnu.no/media/svg/architecture/architecture1.svg','http://it2810-33.idi.ntnu.no/media/svg/architecture/architecture2.svg','/src/assets/svg/architecture/architecture3.svg','/src/assets/svg/architecture/architecture4.svg'],
+      imagePaths: ['http://it2810-33.idi.ntnu.no/media/svg/architecture/architecture1.svg','http://it2810-33.idi.ntnu.no/media/svg/architecture/architecture2.svg','http://it2810-33.idi.ntnu.no/media/svg/architecture/architecture3.svg','http://it2810-33.idi.ntnu.no/media/svg/architecture/architecture4.svg'],
       musicPaths: ['wav/lounge/lounge1', 'wav/lounge/lounge2', 'wav/lounge/lounge3', 'wav/lounge/lounge4']
     }
   }
