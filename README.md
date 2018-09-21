@@ -25,7 +25,7 @@ Layouten til siden vår er av minimalistisk art utformet med inspirasjon fra eks
 
 
 ## Komponentstruktur
-Vår komponentstruktur er laget etter et forslag av stud.ass. Her benytter vi `<App />` som hovedkomponent, og er overordnet herre i vårt react-hierarki. `<App />` lagrer kun kategorivalgene i state, sendt ned fra `<Menu />`. Disse kategoriene blir sendt ned til `<Exhibition />`, som har overordnet ansvar for å fetche rett innhold til enhver tid, og logikk for å unngå ekstra fetching hvis en tab allerede har vært besøkt. `<Exhibition />` sender ned all data som samsvarer med hvilken tab, og sender dette ned som props. `<NavBar />` sender beskjed til `<Exhibition />` om hvilken tab som er aktiv. 
+Vår komponentstruktur var i utgangspunktet en uoversiktelig struktur uten mål og mening, det var rotete og vi var uviten om hvordan `setState()` påvirket rerendering av en spesifikk komponent og alle subkomponenter tilhørende denne. Rotet førte til at vi snakket med stud.ass om hvordan komponentstruktueren til en velfungerende React-applikasjon burde se ut, og havnet på den som er beskrevet videre og bildeillustrasjonen nedenfor. Her benytter vi `<App />` som hovedkomponent, og er overordnet herre i vårt react-hierarki. `<App />` lagrer kun kategorivalgene i state, som blir valgt og sendt ned fra `<Menu />`. Disse kategorivalgene blir sendt ned til `<Exhibition />`, som har overordnet ansvar for å fetche rett innhold til enhver tid, og logikk for å unngå ekstra fetching hvis en tab allerede har vært besøkt. `<Exhibition />` lagrer fetchet data i state, og sender ned datene som samsvarer med hvilken tab som er aktiv ned som props til `<ExhibitionItem />` som viser frem utstillingen. `<NavBar />` sender beskjed til `<Exhibition />` om hvilken tab som er aktiv. 
 
 ##### Class components
 `<App />`
@@ -40,6 +40,54 @@ Vår komponentstruktur er laget etter et forslag av stud.ass. Her benytter vi `<
 ![alt text](https://i.imgur.com/yruHiwo.png)
 
 ## React
+I prosjektet har vi brukt create-react-app som vår startbundle oppfordret av oppgavebeskrivelsen, og ingen tredjeparts-biblioteker. Vi har tatt i bruk ES6 javascript syntax, og JSX.
+
+##### Create-react-app
+Create-react-app kommer med masse nyttige biblitoeker som gjør livet enklere for oss utviklere. Noen av disse som er spesielt handy er babel.js. Babel konverterer siste versjonen av JavaScript til ES5, som kan kjøre på enhver browser. Babel gjør at vi får enkelere React syntax, den konverterer JSX og gjør at all snacksen som følger med ES6 fungerer som det skal.
+
+##### ES6
+Det vi bruker hovedsakelig fra ES6 er klasser og “fat” arrow funksjoner får å få tilgang til funksjonene uten å måtte binde metodene i konstruktøren får få tilgang til this.funksjonsnavn.
+Arrow funksjonene gjør dette for oss, så metodene er automastisk relatert til klassen der de er definert, og gir oss direkte tilgang til `this.setState()`.
+
+Eksempel på bruk av “fat” arrow og klasser
+```JavaScript
+export default class Exhibition extends React.Component {
+
+   constructor(props){
+       super(props);
+       this.state = {
+           images: ['','','',''],
+           musicPaths: ['','','',''],
+           text: ['','','',''],
+           activeTab: 0
+       }
+     }
+
+     handleActiveTab = (tabNumber) => {
+       this.setState({activeTab: tabNumber});
+     }
+
+```
+
+##### JSX
+JSX (JavaScript eXtention) er en React utvidelse som gjør at vi kan skrive ren XML syntax i javaScript som gjør koden vår mer elegant. Babel konverterer JSX helt ned til React.  Fra siden til React er disse to skrivemåtene ekvivalente. 
+
+```JavaScript
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+```JavaScript
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+
+```
+
 
 ## AJAX
 
