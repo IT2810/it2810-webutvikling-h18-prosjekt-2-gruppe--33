@@ -58,53 +58,53 @@ export default class Menu extends React.Component {
                     <div className="MusicMenu menuItem" onChange={this.handleRadioMusicEvent}>
                         <h3 className="MenuHeader">Music</h3>
                         <div>
-                        <input className="radio-input" type="radio" id="huey" name="music" value="LOUNGE" />
-                        <label htmlFor="huey">Lounge</label>
+                        <input className="radio-input" type="radio" name="music" value="LOUNGE" />
+                        <label>Lounge</label>
                         </div>
 
                         <div>
-                        <input className="radio-input" type="radio" id="dewey" name="music" value="ORCHESTRAL" />
-                        <label htmlFor="dewey">Orchestral</label>
+                        <input className="radio-input" type="radio" name="music" value="ORCHESTRAL" />
+                        <label>Orchestral</label>
                         </div>
 
                         <div>
-                        <input className="radio-input" type="radio" id="louie" name="music" value="RHYTHM" />
-                        <label htmlFor="louie">Rhythm</label>
+                        <input className="radio-input" type="radio" name="music" value="RHYTHM" />
+                        <label>Rhythm</label>
                         </div>
 
                     </div>
                     <div className="ImageMenu menuItem" onChange={this.handleRadioImageEvent}>
                     <h3 className="MenuHeader">Image</h3>
                         <div>
-                        <input className="radio-input" type="radio" id="huey" name="image" value="ARCHITECTURE"/>
-                        <label htmlFor="huey">Architecture</label>
+                        <input className="radio-input" type="radio" name="image" value="ARCHITECTURE"/>
+                        <label>Architecture</label>
                         </div>
 
                         <div>
-                        <input className="radio-input" type="radio" id="dewey" name="image" value="FLOWERS" />
-                        <label htmlFor="dewey">Flowers</label>
+                        <input className="radio-input" type="radio" name="image" value="FLOWERS" />
+                        <label>Flowers</label>
                         </div>
 
                         <div>
-                        <input className="radio-input" type="radio" id="louie" name="image" value="PET" />
-                        <label htmlFor="louie">Pets</label>
+                        <input className="radio-input" type="radio" name="image" value="PET" />
+                        <label>Pets</label>
                         </div>
                     </div>
                     <div className="TextMenu menuItem" onChange={this.handleRadioTextEvent}>
                     <h3 className="MenuHeader">Text</h3>
                         <div>
-                        <input className="radio-input" type="radio" id="huey" name="text" value="haiku"/>
-                        <label htmlFor="huey">Haiku</label>
+                        <input className="radio-input" type="radio"  name="text" value="haiku"/>
+                        <label>Haiku</label>
                         </div>
 
                         <div>
-                        <input className="radio-input" type="radio" id="dewey" name="text" value="limerick"/>
-                        <label htmlFor="dewey">Limerick</label>
+                        <input className="radio-input" type="radio"  name="text" value="limerick"/>
+                        <label>Limerick</label>
                         </div>
 
                         <div>
-                        <input className="radio-input" type="radio" id="louie" name="text" value="love_poems" />
-                        <label htmlFor="louie">Love poems</label>
+                        <input className="radio-input" type="radio"  name="text" value="love_poems" />
+                        <label>Love poems</label>
                         </div>
                       </div>
                     </div>
