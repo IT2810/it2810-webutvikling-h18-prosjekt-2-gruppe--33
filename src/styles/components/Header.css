@@ -6,11 +6,6 @@
     width: 85%;
 }
 
-.header-title{
-
-}
-
-
 .header-button{
   width: 75px;
   border: 1px solid black;
@@ -22,11 +17,8 @@
 
 .header-button:hover{
   background-color: #ccc;
-
-
 }
-
-
+/*This is used to center the title using flex' space-evenlyt*/
 #invisibleContent{
   width: 75px;
 }

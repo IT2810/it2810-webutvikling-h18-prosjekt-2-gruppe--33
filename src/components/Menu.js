@@ -2,9 +2,8 @@ import React from 'react';
 import '../styles/components/Menu.css';
 
 
-
 export default class Menu extends React.Component {
-
+    //Setting music category in exhibition
     handleRadioMusicEvent = (event) => {
         let musicType = event.target.value;
         if(musicType === 'RHYTHM'){
@@ -21,12 +20,12 @@ export default class Menu extends React.Component {
         }
 
     }
-
+    //Setting category of text in exhibition
     handleRadioTextEvent = (event) =>{
         const eventName = event.target.value;
         this.props.setTextPath(eventName);
     }
-
+    //Setting image category in exhibition
     handleRadioImageEvent = (event) => {
 
         const eventName = event.target.value;
@@ -49,7 +48,7 @@ export default class Menu extends React.Component {
             this.props.setImagePaths(folder,imgName);
         }
     }
-
+    //Rendering the menu component
     render(){
         return(
             <div className="Menu">

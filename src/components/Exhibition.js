@@ -19,25 +19,27 @@ export default class Exhibition extends React.Component {
       handleActiveTab = (tabNumber) => {
         this.setState({activeTab: tabNumber});
       }
-
+//Initial AJAX call when component first renders
     componentDidMount(){
-        fetch(this.props.textPath).then(function(response){
-            return response.json();
-          }).then(myText => this.setState({ text: myText}));
-
-        fetch(this.props.imagePaths[this.state.activeTab])
-        .then(response => response.text())
-        .then(svg => {
-            let images = this.state.images;
-            images[this.state.activeTab] = svg;
-            return images;
-        })
-        .then(images => this.setState({images}));
-        let musicPaths = this.props.musicPaths.map((path) => 'http://0.0.0.0:8000/' + path + ".mp3");
-        this.setState({musicPaths})
+      //Fetching text from JSON
+      fetch(this.props.textPath).then(function(response){
+          return response.json();
+        }).then(myText => this.setState({ text: myText}));
+      //Fetching SVG file and parsing
+      fetch(this.props.imagePaths[this.state.activeTab])
+      .then(response => response.text())
+      .then(svg => {
+          let images = this.state.images;
+          images[this.state.activeTab] = svg;
+          return images;
+      })
+      .then(images => this.setState({images}));
+      //Setting music path
+      let musicPaths = this.props.musicPaths.map((path) => 'http://0.0.0.0:8000/' + path + ".mp3");
+      this.setState({musicPaths})
 
     }
-
+//Similar fetch functions for when state is updated
     componentDidUpdate(prevProps,prevState){
         let initialState = ['','','','']
         if(prevProps.imagePaths !== this.props.imagePaths){
@@ -61,7 +63,7 @@ export default class Exhibition extends React.Component {
               return response.json();
             }).then(myText => this.setState({ text: myText}));
         }
-
+        //Only fetches SVG if not already in state
         if(prevState.images[this.state.activeTab] === ''){
                 console.log("Fetching image")
                 fetch(this.props.imagePaths[this.state.activeTab])
@@ -75,7 +77,7 @@ export default class Exhibition extends React.Component {
         }
     }
 
-
+      //Passing the fetched files to ExhibitionItem which is rendered to the DOM
       render() {
           let activeTab = this.state.activeTab;
           return(

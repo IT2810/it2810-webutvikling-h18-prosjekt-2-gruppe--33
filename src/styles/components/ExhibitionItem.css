@@ -1,3 +1,4 @@
+/*Common styling for all device sizes*/
 .ExhibitionItem {
 	display: flex;
 	margin: auto;
@@ -17,6 +18,15 @@
 	margin: 0 auto;
 	white-space: pre-wrap;
 }
+svg button {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+button {
+	border: none;
+	background-color: #FFFFFF;
+}
 /*Desktop*/
 @media only screen
 	and (min-width: 1025px){
@@ -31,8 +41,42 @@
 		svg{
 			size: 100%;
 		}
-	}
-	/*Desktop end */
+}
+/*Desktop end */
+/*Tablet*/
+/* Portrait */
+@media only screen
+  and (min-width: 668px)
+  and (max-width: 1024px)
+  and (orientation: portrait){
+		.ExhibitionItem{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.flexItem{
+			padding: 8% 2%;
+		}
+}
+
+/* Landscape */
+@media only screen
+  and (min-width: 668px)
+  and (max-width: 1024px)
+  and (orientation: landscape){
+		.ExhibitionItem{
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
+			padding: 10% 1%;
+		}
+		svg{
+			size: 80%;
+		}
+}
+
+/*Tablet ends*/
 /*Phone*/
 @media only screen
 	and (max-width: 668px)
@@ -68,46 +112,3 @@ and (max-width: 667px)
 		}
 }
 /*phone end*/
-/*Tablet*/
-/* Portrait */
-@media only screen
-  and (min-width: 668px)
-  and (max-width: 1024px)
-  and (orientation: portrait){
-		.ExhibitionItem{
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-		}
-		.flexItem{
-			padding: 8% 2%;
-		}
-}
-
-/* Landscape */
-@media only screen
-  and (min-width: 668px)
-  and (max-width: 1024px)
-  and (orientation: landscape){
-		.ExhibitionItem{
-			flex-direction: row;
-			justify-content: space-evenly;
-			align-items: center;
-			padding: 10% 1%;
-		}
-		svg{
-			size: 80%;
-		}
-}
-
-/*Tablet ends*/
-svg button {
-	max-width: 200px;
-	max-height: 200px;
-}
-
-button {
-	border: none;
-	background-color: #FFFFFF;
-}

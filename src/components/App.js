@@ -6,7 +6,7 @@ import Menu from './Menu';
 import Header from './Header';
 import Exhibition from './Exhibition';
 
-
+//The main component in our app
 class App extends Component {
   constructor(props){
     super(props);
@@ -18,17 +18,18 @@ class App extends Component {
     }
   }
 
-
+//Function for opening the menu
   handleMenu = () => {
     this.setState(() =>({
       showMenu: this.state.showMenu ? false : true
     }))
   }
 
+//Functions for setting asset paths
   setTextPath = (poemName) => {
     let textPath = 'http://0.0.0.0:8000/json/' + poemName + '.json';
     this.setState({textPath});
-    
+
   }
 
   setMusicPaths = (musicArray) => {
@@ -44,15 +45,15 @@ class App extends Component {
     this.setState({imagePaths});
 
   }
-  
+
 
   render() {
-    
+
     let menu = null
     if(this.state.showMenu){
       menu =  <Menu handleMenu={this.handleMenu} setImagePaths={this.setImagePaths} setMusicPaths={this.setMusicPaths}  setTextPath={this.setTextPath}/>
     }
-
+//Passing paths as props to Exhibition, which performs the actual AJAX
     return (
       <div className="App">
         <Header handleMenu={this.handleMenu} />

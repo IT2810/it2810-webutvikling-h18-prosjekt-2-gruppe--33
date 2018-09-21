@@ -2,14 +2,14 @@ import React from 'react';
 import '../styles/components/ExhibitionItem.css'
 
 export default class ExhibitionItem extends React.Component{
-
+    //Aduio logic
     play = () => {
 
         this.playAudio.pause();
         this.playAudio.load();
         this.playAudio.play();
     }
-
+    //Presenting the exhibition
     render(){
         return(
             <div className="ExhibitionItem">

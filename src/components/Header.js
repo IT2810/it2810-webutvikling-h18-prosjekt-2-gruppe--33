@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/components/Header.css';
 
 
-
+//Contains title and menu button
 const Header = (props) => (
     <div className="App-header">
       <div id="invisibleContent">&nbsp;&nbsp;&nbsp;&nbsp;</div>
