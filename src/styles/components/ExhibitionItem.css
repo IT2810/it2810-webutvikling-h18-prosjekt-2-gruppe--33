@@ -28,6 +28,9 @@
 		.flexItem{
 			padding: 10% 1%;
 		}
+		svg{
+			size: 100%;
+		}
 	}
 	/*Desktop end */
 /*Phone*/
@@ -40,8 +43,12 @@
 			align-items: center;
 		}
 		.flexItem{
-			margin: 0 auto;
+			margin: 20px auto;
 			padding: 10px;
+		}
+		#myImage svg{
+			width: 70%;
+			height: 70%;
 		}
 }
 @media only screen
@@ -54,7 +61,10 @@ and (max-width: 667px)
 		}
 		.flexItem{
 			margin: 0 auto;
-			padding: 20px 10px;
+			padding: 30px 10px;
+		}#myImage svg{
+			width: 70%;
+			height: 70%;
 		}
 }
 /*phone end*/
@@ -86,16 +96,15 @@ and (max-width: 667px)
 			align-items: center;
 			padding: 10% 1%;
 		}
+		svg{
+			size: 80%;
+		}
 }
 
 /*Tablet ends*/
-svg {
+svg button {
 	max-width: 200px;
 	max-height: 200px;
-}
-
-svg:not(button){
-	width: 80%;
 }
 
 button {
