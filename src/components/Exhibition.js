@@ -35,7 +35,7 @@ export default class Exhibition extends React.Component {
       })
       .then(images => this.setState({images}));
       //Setting music path
-      let musicPaths = this.props.musicPaths.map((path) => 'http://0.0.0.0:8000/' + path + ".mp3");
+      let musicPaths = this.props.musicPaths.map((path) => '/src/assets/' + path + ".mp3");
       this.setState({musicPaths})
 
     }
@@ -48,7 +48,7 @@ export default class Exhibition extends React.Component {
         }
 
         if(prevProps.musicPaths !== this.props.musicPaths){
-            let musicPaths = this.props.musicPaths.map((path) => 'http://0.0.0.0:8000/' + path + ".mp3");
+            let musicPaths = this.props.musicPaths.map((path) => '/src/assets/' + path + ".mp3");
             this.setState({musicPaths});
         }
 
